@@ -3,20 +3,24 @@ package ru.yandex.practicum.catsgram.model;
 import java.time.Instant;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Data
+@NoArgsConstructor
+@EqualsAndHashCode(of = { "email" })
 public class User {
 
-    Long id;
+    private Long id;
 
-    String username;
-
-    @NonNull
-    String email;
+    private String username;
 
     @NonNull
-    String password;
+    private String email;
 
-    Instant registrationDate;
+    @NonNull
+    private String password;
+
+    private Instant registrationDate;
 }
